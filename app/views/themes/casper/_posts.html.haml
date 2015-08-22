@@ -1,0 +1,28 @@
+-# Previous/next page links - only displayed on page 2+
+= posts.pagination if paged?
+
+- for post in posts do
+
+  %article.post.tag-test-content
+    %header.post-header
+      %h2.post-title= post.link_to
+
+    %section.post-excerpt
+      %p
+        = post.excerpt words: 26
+        = link_to '&raquo;'.html_safe, post.path, class: 'read-more'
+
+    %footer.post-meta
+      = content.author.user_image html: { class: 'author-thumb', nopin: 'nopin', alt: 'Author image'}
+      = content.author_link
+      - if post.category?
+        on
+        = post.category_link
+      - if post.tags?
+        (#{post.tag_links})
+      = time_tag post.post_date, format: :date_long, html: {class: 'post-date'}
+
+
+-# Previous/next page links - displayed on every page
+= posts.pagination
+

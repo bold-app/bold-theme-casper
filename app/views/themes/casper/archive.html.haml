@@ -1,0 +1,27 @@
+- cover = page.image_path(:cover_image, size: :original)
+%header.main-header.tag-head{ style: ("background-image: url('#{cover}')" if cover.present?), class: ('no-cover' unless cover.present?)}
+
+  %nav.main-nav.overlay.clearfix
+    - if site.logo?
+      %a.blog-logo{href: site.url}
+        = site.logo_tag
+
+    %a.menu-button.icon-menu{href: '#'}
+      %span.word Menu
+
+  .vertical
+    .main-header-content.inner
+      %h1.page-title
+        - if params[:month].blank?
+          = params[:year]
+        - else
+          = d archive.to_date, '%B %Y'
+      %h2.page-description
+        = t '.count', count: archive.posts.count
+
+
+%main.content{role: "main"}
+  = render 'themes/casper/posts', posts: archive.posts(page: params[:page])
+
+
+

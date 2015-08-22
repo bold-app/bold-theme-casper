@@ -1,0 +1,11 @@
+.nav
+  %h3.nav-title= t'.menu'
+  %a.nav-close{href:'#'}
+    %span.hidden= t'.close'
+  %ul
+    - site.navigation.each_topic do |topic|
+      %li
+        %a{ href: topic.url }= topic.name
+  - if respond_to?(:atom_feed_url)
+    %a.subscribe-button.icon-feed{ href: atom_feed_url }= t'.subscribe'
+

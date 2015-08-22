@@ -1,0 +1,23 @@
+- cover = page.image_path(:cover_image, size: :original)
+%header.main-header.tag-head{ style: ("background-image: url('#{cover}')" if cover.present?), class: ('no-cover' unless cover.present?)}
+
+  %nav.main-nav.overlay.clearfix
+    - if site.logo?
+      %a.blog-logo{href: site.url}
+        = site.logo_tag
+
+    %a.menu-button.icon-menu{href: '#'}
+      %span.word Menu
+
+  .vertical
+    .main-header-content.inner
+      %h1.page-title= current_tag.name
+      %h2.page-description
+        = t '.postcount', count: current_tag.post_count
+
+
+-# The main content area on the homepage
+%main.content{role: "main"}
+  = render 'themes/casper/posts', posts: post_list(limit: 20)
+
+

@@ -1,0 +1,34 @@
+%header.main-header.author-head{ style: ("background-image: url('#{page.image_path :cover_image, size: :original}')" if page[:cover_image].present?), class: ('no-cover' unless page[:cover_image].present?)}
+
+  %nav.main-nav.overlay.clearfix
+    - if site.logo?
+      %a.blog-logo{href: site.url}
+        = site.logo_tag
+
+    %a.menu-button.icon-menu{href: '#'}
+      %span.word Menu
+
+%section.author-profile.inner
+  %figure.author-image
+    .img{style: "background-image: url('#{author.user_image_url(250)}')"}
+      %span.hidden= t '.author_picture', author: author.name
+
+  %h1.author-title= author.name
+  - if author.bio.present?
+    %h2.author-bio= author.bio
+  .author-meta
+    - if author.location?
+      %span.author-location.icon-location= author.location
+    - if author.website?
+      %span.author-link.icon-link
+        = link_to author.website
+    %span.author-stats
+      %i.icon-stats
+      = t '.stats', count: author.posts.count
+
+
+%main.content{role: "main"}
+  = render 'themes/casper/posts', posts: post_list(limit: 20)
+
+
+

@@ -1,0 +1,59 @@
+en:
+  themes:
+    casper:
+      templates:
+        post: Post
+        page: Page
+
+      # declare equal date formats for date and time objects:
+      date:
+        formats:
+          month_long: '%B %Y'
+          date_long: '%B %d, %Y'
+      time:
+        formats:
+          month_long: '%B %Y'
+          date_long: '%B %d, %Y'
+
+      archive:
+        count:
+          zero: No posts
+          one: One post
+          other: "%{count} posts"
+
+      author:
+        author_picture: "%{author}'s Picture"
+        stats:
+          zero: No posts
+          one: One post
+          other: "%{count} posts"
+
+      layout:
+        published_with: "Proudly published with %{link}"
+
+      navigation:
+        close: Close
+        menu: Menu
+        subscribe: Subscribe
+
+      pagination:
+        paginator:
+          page_x_of_y: "Page %{x} of %{y}"
+        next_page:
+          label: "Older Posts →"
+        prev_page:
+          label: "← Newer Posts"
+
+      category:
+        description: "A %{count}-post collection"
+
+      post:
+        author_picture: "%{author}'s Picture"
+
+      tag:
+        postcount:
+          zero: No posts
+          one: "One post"
+          other: "%{count} posts"
+
+

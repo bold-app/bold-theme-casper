@@ -1,0 +1,48 @@
+!!!
+%html{itemscope: true, itemtype: 'http://schema.org/WebPage'}
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{:'http-equiv' => "X-UA-Compatible", :content => "IE=edge"}
+    %meta{name: "HandheldFriendly", content: "True"}
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+    %title
+      - if content
+        = "#{content.meta_title} - #{site.name}"
+      - elsif @year
+        = "#{@year} - #{site.name}"
+      - else
+        = site.name
+
+    = stylesheet_link_tag "casper", media: :all
+    = stylesheet_link_tag "//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"
+
+    -# renders site and article meta data:
+    = bold_meta
+
+    -# optional header content that can be set from within templates:
+    = yield :html_head
+
+  -# body_id and body_class can be set from within templates
+  %body{id: yield(:body_id), class: "#{content.css_class} nav-closed"}
+
+    -# by default renders nothing, but plugins might hook in here:
+    = bold_header
+
+    = render 'themes/casper/navigation'
+
+    %div.site-wrapper
+
+      -# template content goes here
+      = yield
+
+      %footer.site-footer.clearfix
+        %section.copyright
+          %a{href: site.url}= site.name
+          &copy; #{d now, '%Y'}
+        %section.poweredby= raw t '.published_with', link: link_to('Bold', 'https://bold-app.org')
+
+    -# by default renders nothing, but plugins might hook in here:
+    = bold_footer
+
+    = javascript_include_tag 'casper'
+

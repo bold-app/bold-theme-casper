@@ -1,0 +1,26 @@
+- has_cover = page[:cover_image].present?
+- if has_cover
+  - content_for :html_head do
+    %meta{name: 'og:image', content: page.image_path(:cover_image, size: :original)}
+
+-# header
+%header.main-header.post-head{style: ("background-image: url('#{page.image_path :cover_image, size: :original}')" if has_cover), class: ('no-cover' unless has_cover)}
+
+  %nav.main-nav.clearfix{class:('overlay' if has_cover)}
+    - if site.logo?
+      %a.blog-logo{href: site.url}
+        = site.logo_tag
+
+    %a.menu-button.icon-menu{href: '#'}
+      %span.word Menu
+
+-# the post
+%main.content{role: "main"}
+  %article.post{class: page.css_class}
+
+    %header.post-header
+      %h1.post-title= page.title
+
+    %section.post-content
+      = page.body_html
+

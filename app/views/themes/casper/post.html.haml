@@ -1,0 +1,78 @@
+- have_image = post[:cover_image].present?
+- if have_image
+  - content_for :html_head do
+    %meta{name: 'og:image', content: post.image_path(:cover_image, size: :original)}
+
+-# header
+%header.main-header.post-head{style: ("background-image: url('#{post.image_path :cover_image, size: :original}')" if have_image), class: ('no-cover' unless have_image)}
+
+  %nav.main-nav.clearfix{class:('overlay' if have_image)}
+    - if site.logo?
+      %a.blog-logo{href: site.url}
+        = site.logo_tag
+
+    %a.menu-button.icon-menu{href: '#'}
+      %span.word Menu
+
+-# the post
+%main.content{role: "main"}
+  %article{class: post.css_class}
+
+    %header.post-header
+      %h1.post-title= post.title
+
+      %section.post-meta
+        = time_tag post.post_date, format: :date_long, html: {class: 'post-date'}
+        - if post.category?
+          on #{post.category_link}
+        - if post.tags?
+          (#{post.tag_links})
+
+
+    %section.post-content
+      = post.body_html
+
+
+    %footer.post-footer
+      %figure.author-image
+        %a.img{href: post.author.path, style: "background-image: url(#{post.author.user_image_url(250)})"}
+          %span.hidden= t '.author_picture', author: post.author.name
+      %section.author
+        %h4
+          = post.author_link
+        - if post.author.description?
+          %p= post.author.description
+        .author-meta
+          - if post.author.location?
+            %span.author-location.icon-location= post.author.location
+          - if post.author.website?
+            %span.author-link.icon-link
+              = link_to post.author.website
+
+      %section.share
+        %h4 Share this post
+        %a.icon-twitter{href: "https://twitter.com/share?text=#{percent_encode post.title}&url=#{percent_encode post.url}", onclick: "window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"}
+          %span.hidden Twitter
+        %a.icon-facebook{href: "https://www.facebook.com/sharer/sharer.php?u=#{percent_encode post.url}", onclick: "window.open(this.href, 'facebook-share','width=580,height=296');return false;"}
+          %span.hidden Facebook
+        %a.icon-google-plus{href: "https://plus.google.com/share?url=#{percent_encode post.url}", onclick: "window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"}
+          %span.hidden Google+
+
+%aside.read-next
+  - if p = post.next_post
+    - have_image = p[:cover_image].present?
+    %a.read-next-story{ class:('no-cover' unless have_image), style:("background-image: url('#{p.image_path :cover_image, size: :original}')" if have_image), href: p.path }
+      %section.post
+        %h2= p.title
+        %p
+          = p.excerpt words: 19
+          &hellip;
+
+  - if p = post.prev_post
+    - have_image = p[:cover_image].present?
+    %a.read-next-story.prev{ class:('no-cover' unless have_image), style:("background-image: url('#{p.image_path :cover_image, size: :original}')" if have_image), href: p.path }
+      %section.post
+        %h2= p.title
+        %p
+          = p.excerpt words: 19
+          &hellip;

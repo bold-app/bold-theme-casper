@@ -1,0 +1,24 @@
+-# The big featured header
+%header.main-header{ style: ("background-image: url('#{page.image_path :cover_image, size: :original}')" if page[:cover_image].present?), class: ('no-cover' unless page[:cover_image].present?)}
+
+  %nav.main-nav.overlay.clearfix
+    - if site.logo?
+      %a.blog-logo{href: site.url}
+        = site.logo_tag
+
+    %a.menu-button.icon-menu{href: '#'}
+      %span.word Menu
+
+  .vertical
+    .main-header-content.inner
+      %h1.page-title= site.name
+      - if page[:description].present?
+        %h2.page-description= page[:description]
+
+  %a.scroll-down.icon-arrow-left{"data-offset" => "-45", href: "#content"}
+    %span.hidden Scroll Down
+
+-# The main content area on the homepage
+%main#content.content{role: "main"}
+  = render 'themes/casper/posts', posts: post_list(limit: 10)
+
