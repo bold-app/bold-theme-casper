@@ -1,7 +1,15 @@
 - have_image = post[:cover_image].present?
-- if have_image
-  - content_for :html_head do
-    %meta{name: 'og:image', content: post.image_path(:cover_image, size: :original)}
+
+-# Meta data. Bold by default renders a lot of meta data already, we just
+-# complement this here with the cover image (if present), and add twitter card
+-# meta data.
+- content_for :html_head do
+  - if have_image
+    = og_meta_tag :image, post.image_url(:cover_image, size: :casper_small)
+    = tw_meta 'summary_large_image'
+  - else
+    = tw_meta 'summary'
+
 
 -# header
 %header.main-header.post-head{style: ("background-image: url('#{post.image_path :cover_image, size: :original}')" if have_image), class: ('no-cover' unless have_image)}
