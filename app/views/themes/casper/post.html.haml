@@ -69,7 +69,7 @@
 %aside.read-next
   - if p = post.next_post
     - have_image = p[:cover_image].present?
-    %a.read-next-story{ class:('no-cover' unless have_image), style:("background-image: url('#{p.image_path :cover_image, size: :original}')" if have_image), href: p.path }
+    %a.read-next-story{ class:('no-cover' unless have_image), style:("background-image: url('#{p.image_path :cover_image, size: :original}')" if have_image), href: content_path(p.path) }
       %section.post
         %h2= p.title
         %p
@@ -78,7 +78,7 @@
 
   - if p = post.prev_post
     - have_image = p[:cover_image].present?
-    %a.read-next-story.prev{ class:('no-cover' unless have_image), style:("background-image: url('#{p.image_path :cover_image, size: :original}')" if have_image), href: p.path }
+    %a.read-next-story.prev{ class:('no-cover' unless have_image), style:("background-image: url('#{p.image_path :cover_image, size: :original}')" if have_image), href: content_path(p.path) }
       %section.post
         %h2= p.title
         %p

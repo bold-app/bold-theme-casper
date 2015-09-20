@@ -1387,8 +1387,9 @@ body:not(.post-template) .post-title {
 }
 
 .read-next-story .post {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding: 6rem 2rem;
+    margin: 4rem auto;
+    z-index: 0;
 }
 
 .read-next-story .post:before {
