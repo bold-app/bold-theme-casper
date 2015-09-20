@@ -1,4 +1,4 @@
-Casper Theme for Bold
+Casper Theme for Bold [![Build Status](https://travis-ci.org/bold-app/bold-theme-casper.svg?branch=master)](https://travis-ci.org/bold-app/bold-theme-casper)
 =====================
 
 Ghost's default theme, Casper, ported for [Bold](http://bold-app.org). Find the
