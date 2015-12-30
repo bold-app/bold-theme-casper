@@ -20,6 +20,7 @@ en:
           zero: No posts
           one: One post
           other: "%{count} posts"
+        title: Archive
 
       author:
         author_picture: "%{author}'s Picture"

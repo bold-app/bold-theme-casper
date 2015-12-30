@@ -14,6 +14,10 @@ module Bold
             # pretty name to be shown in UI
             name 'Casper'
 
+            # Languages supported by the theme.
+            # To add one, create config/locales/xy.yml and add xy here
+            locales %i(en de)
+
             # The homepage template. It does not render body text, but has two
             # custom fields named cover_image and description.
             #

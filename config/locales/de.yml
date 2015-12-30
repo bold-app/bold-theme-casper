@@ -1,0 +1,60 @@
+de:
+  themes:
+    casper:
+      templates:
+        post: Artikel
+        page: Seite
+
+      # declare equal date formats for date and time objects:
+      date:
+        formats:
+          month_long: '%B %Y'
+          date_long: '%B %d, %Y'
+      time:
+        formats:
+          month_long: '%B %Y'
+          date_long: '%B %d, %Y'
+
+      archive:
+        count:
+          zero: Noch keine Artikel
+          one: Ein Artikel
+          other: "%{count} Artikel"
+        title: Archiv
+
+      author:
+        author_picture: "Bild von %{author}"
+        stats:
+          zero: Noch keine Artikel
+          one: Ein Artikel
+          other: "%{count} Artikel"
+
+      layout:
+        published_with: "Veröffentlicht mit %{link}"
+
+      navigation:
+        close: Schließen
+        menu: Navigation
+        subscribe: Abonnieren
+
+      pagination:
+        paginator:
+          page_x_of_y: "Seite %{x} von %{y}"
+        next_page:
+          label: "Ältere Artikel →"
+        prev_page:
+          label: "← Neuere Artikel"
+
+      category:
+        description: "%{count} Artikel"
+
+      post:
+        author_picture: "Bild von %{author}"
+
+      tag:
+        postcount:
+          zero: Keine Artikel
+          one: "Ein Artikel"
+          other: "%{count} Artikel"
+
+
