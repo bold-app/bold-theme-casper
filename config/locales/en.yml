@@ -50,6 +50,9 @@ en:
 
       post:
         author_picture: "%{author}'s Picture"
+        read_this_next: Read this next
+        share_this: Share this post
+        you_might_enjoy: You might enjoy
 
       tag:
         postcount:

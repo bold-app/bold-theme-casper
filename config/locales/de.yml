@@ -50,6 +50,9 @@ de:
 
       post:
         author_picture: "Bild von %{author}"
+        read_this_next: Weiterlesen
+        share_this: Teilen
+        you_might_enjoy: Auch interessant
 
       tag:
         postcount:

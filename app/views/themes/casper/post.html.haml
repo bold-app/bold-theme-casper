@@ -58,7 +58,7 @@
               = link_to post.author.website
 
       %section.share
-        %h4 Share this post
+        %h4= t'.share_this'
         %a.icon-twitter{href: "https://twitter.com/share?text=#{percent_encode post.title}&url=#{percent_encode post.url}", onclick: "window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"}
           %span.hidden Twitter
         %a.icon-facebook{href: "https://www.facebook.com/sharer/sharer.php?u=#{percent_encode post.url}", onclick: "window.open(this.href, 'facebook-share','width=580,height=296');return false;"}
@@ -71,6 +71,7 @@
     - have_image = p[:cover_image].present?
     %a.read-next-story{ class:('no-cover' unless have_image), style:("background-image: url('#{p.image_path :cover_image, size: :original}')" if have_image), href: content_path(p.path) }
       %section.post
+        %span= t'.read_this_next'
         %h2= p.title
         %p
           = p.excerpt words: 19
@@ -80,6 +81,7 @@
     - have_image = p[:cover_image].present?
     %a.read-next-story.prev{ class:('no-cover' unless have_image), style:("background-image: url('#{p.image_path :cover_image, size: :original}')" if have_image), href: content_path(p.path) }
       %section.post
+        %span= t '.you_might_enjoy'
         %h2= p.title
         %p
           = p.excerpt words: 19
