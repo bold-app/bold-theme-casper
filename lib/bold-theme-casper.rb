@@ -27,8 +27,8 @@ module Bold
             # For the custom fields Bold expects a form partial for the editor
             # view to be located in
             # app/views/themes/casper/fields/_homepage.html.haml
-            template :home, for: :homepage, body: false,
-              fields: %w(cover_image description)
+            template :home, for: :homepage,
+              fields: %w(cover_image description limit)
 
             # app/views/themes/casper/post.html.haml
             template :post, fields: %w(cover_image)

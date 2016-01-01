@@ -940,6 +940,13 @@ article.post:after {
     box-shadow: #FFF 0 0 0 5px;
 }
 
+article.post.home-template{
+  border-bottom: none;
+}
+article.post.home-template:after{
+  display: none;
+}
+
 body:not(.post-template) .post-title {
     font-size: 3.6rem;
 }

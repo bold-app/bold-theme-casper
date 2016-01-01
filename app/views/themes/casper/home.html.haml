@@ -15,10 +15,18 @@
       - if page[:description].present?
         %h2.page-description= page[:description]
 
-  %a.scroll-down.icon-arrow-left{"data-offset" => "-45", href: "#content"}
-    %span.hidden Scroll Down
+  - unless paged?
+    %a.scroll-down.icon-arrow-left{"data-offset" => "-45", href: "#content"}
+      %span.hidden Scroll Down
 
 -# The main content area on the homepage
 %main#content.content{role: "main"}
-  = render 'themes/casper/posts', posts: post_list(limit: 10)
+
+  - if !paged? && page.body?
+    %article.post{class: page.css_class}
+      %section.post-content
+        = page.body_html
+
+
+  = render 'themes/casper/posts', posts: post_list(limit: page[:limit] || 10)
 
