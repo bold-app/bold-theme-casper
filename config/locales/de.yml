@@ -20,7 +20,6 @@ de:
           zero: Noch keine Artikel
           one: Ein Artikel
           other: "%{count} Artikel"
-        title: Archiv
 
       author:
         author_picture: "Bild von %{author}"

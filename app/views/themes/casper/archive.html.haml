@@ -13,7 +13,7 @@
     .main-header-content.inner
       %h1.page-title
         - if params[:year].blank?
-          = t '.title'
+          = page.title
         - if params[:month].blank?
           = params[:year]
         - else
