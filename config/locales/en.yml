@@ -1,6 +1,10 @@
 en:
   themes:
     casper:
+      image_versions:
+        big: big
+        small: small
+
       templates:
         post: Post
         page: Page

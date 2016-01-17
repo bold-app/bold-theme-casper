@@ -1,6 +1,10 @@
 de:
   themes:
     casper:
+      image_versions:
+        big: groß
+        small: klein
+
       templates:
         post: Artikel
         page: Seite

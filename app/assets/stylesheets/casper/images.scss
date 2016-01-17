@@ -1,3 +1,27 @@
-img.casper_small {
-  max-width: 300px;
+main article {
+  img.small, figure.small {
+    max-width: 300px;
+  }
+
+  figure {
+    text-align: center;
+    figcaption {
+      font-size: 70%;
+      line-height: 1.4em;
+    }
+  }
+
+  .left {
+    float: left;
+    padding: 0 2em 1em 0;
+  }
+
+  .right {
+    float: right;
+    padding: 0 0 1em 2em;
+  }
+
+  section, footer {
+    clear: both;
+  }
 }

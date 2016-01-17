@@ -52,8 +52,8 @@ module Bold
             assets 'casper.css', 'casper.js'
 
             # the image formats we use in templates
-            image_version :casper_big, width: 1790, quality: 70
-            image_version :casper_small, width: 600, quality: 70
+            image_version :big, width: 1790, quality: 70
+            image_version :small, width: 600, quality: 70
 
           end
         end
