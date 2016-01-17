@@ -27,6 +27,11 @@ main article {
     padding: 0 0 1em 2em;
   }
 
+  img.left, img.right {
+    transform: none;
+    position: initial;
+  }
+
   section, footer {
     clear: both;
   }
