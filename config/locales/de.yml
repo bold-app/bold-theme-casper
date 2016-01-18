@@ -1,6 +1,11 @@
 de:
   themes:
     casper:
+
+      fields:
+        archive:
+          yearly: Jährliches Archiv
+
       image_versions:
         big: groß
         small: klein
@@ -13,11 +18,11 @@ de:
       date:
         formats:
           month_long: '%B %Y'
-          date_long: '%B %d, %Y'
+          date_long: '%d. %B %Y'
       time:
         formats:
           month_long: '%B %Y'
-          date_long: '%B %d, %Y'
+          date_long: '%d. %B %Y'
 
       archive:
         count:

@@ -26,13 +26,13 @@
 
 
 %main.content{role: "main"}
-  - if params[:year].blank?
+  - if params[:year].blank? && page.year_index?
     - for year, posts in site.archive.years do
-      %article.post.tag-test-content
+      %article.post
         %header.post-header
           %h2.post-title= link_to year, archive_path(year: year)
         %section.post-excerpt
-          %p= t '.count', count: posts
+          %p= link_to t('.count', count: posts), archive_path(year: year)
   - else
     = render 'themes/casper/posts', posts: site.archive.posts(page: params[:page])
 

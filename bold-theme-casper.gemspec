@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.email       = ["jk@jkraemer.net"]
   s.homepage    = "https://github.com/bold-app/bold-theme-casper"
   s.summary     = "The Casper theme for Bold."
-  s.description = "This is a port of Ghost's default theme for the Bold blogging engine."
+  s.description = "A port of Ghost's default theme of the same name."
   s.license     = "GPL v3"
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]

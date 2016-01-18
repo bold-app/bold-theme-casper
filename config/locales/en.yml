@@ -1,6 +1,11 @@
 en:
   themes:
     casper:
+
+      fields:
+        archive:
+          yearly: Yearly Archive
+
       image_versions:
         big: big
         small: small

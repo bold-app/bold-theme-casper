@@ -39,7 +39,7 @@ module Bold
             # templates for post listings by tag, author and
             # year/month
             template :tag,      body: false, fields: %w(cover_image)
-            template :archive,  body: false, fields: %w(cover_image)
+            template :archive,  body: false, fields: %w(cover_image year_index)
             template :category, body: false, fields: %w(cover_image)
             template :author,   body: false
 
