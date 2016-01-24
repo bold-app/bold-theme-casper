@@ -6,6 +6,11 @@
     - site.navigation.each_topic do |topic|
       %li
         %a{ href: topic.url }= topic.name
+
+  - if site.search_enabled?
+    = search_form_tag do
+      = text_field_tag :q, '', placeholder: t('.search_placeholder')
+
   - if respond_to?(:atom_feed_url)
     %a.subscribe-button.icon-feed{ href: atom_feed_url }= t'.subscribe'
 

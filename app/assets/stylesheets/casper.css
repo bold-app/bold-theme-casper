@@ -4,4 +4,5 @@
  *= require casper/screen
  *= require casper/archive
  *= require casper/images
+ *= require casper/search
  */

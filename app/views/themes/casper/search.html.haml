@@ -1,0 +1,29 @@
+- cover = page.image_path(:cover_image, size: :original)
+%header.main-header.tag-head{ style: ("background-image: url('#{cover}')" if cover.present?), class: ('no-cover' unless cover.present?)}
+
+  %nav.main-nav.overlay.clearfix
+    - if site.logo?
+      %a.blog-logo{href: site.url}
+        = site.logo_tag
+
+    %a.menu-button.icon-menu{href: '#'}
+      %span.word= t 'themes.casper.navigation.menu'
+
+  .vertical
+    .main-header-content.inner
+      %h1.page-title= page.title
+      - unless current_search.blank?
+        %h2.page-description
+          = t '.results', count: post_list.count, query: current_search.query
+
+
+%main.content{role: "main"}
+  #search-form
+    = search_form_tag do
+      = text_field_tag :q, current_search.query, id: 'query', placeholder: t('.search_placeholder')
+
+  - unless current_search.blank?
+    = render 'themes/casper/search_results', results: post_list(limit: 20)
+
+
+

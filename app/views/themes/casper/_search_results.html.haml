@@ -1,0 +1,28 @@
+= results.pagination
+
+- for content in results do
+
+  %article.post
+    %header.post-header
+      %h2.post-title= content.link_to
+
+    %section.post-excerpt
+      %p
+        = content.excerpt words: 26
+        = link_to '&raquo;'.html_safe, content.path, class: 'read-more'
+
+    - if content.post?
+      %footer.post-meta
+        = content.author.user_image html: { class: 'author-thumb', nopin: 'nopin', alt: 'Author image'}
+        = content.author_link
+        - if content.category?
+          = t 'themes.casper.category_prefix'
+          = content.category_link
+        - if content.tags?
+          (#{content.tag_links})
+        = time_tag content.post_date, format: :date_long, html: {class: 'post-date'}
+
+
+= results.pagination
+
+

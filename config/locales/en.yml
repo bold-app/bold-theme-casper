@@ -2,6 +2,8 @@ en:
   themes:
     casper:
 
+      category_prefix: on
+
       fields:
         archive:
           yearly: Yearly Archive
@@ -13,6 +15,7 @@ en:
       templates:
         post: Post
         page: Page
+        search: Search
 
       # declare equal date formats for date and time objects:
       date:
@@ -44,6 +47,7 @@ en:
         close: Close
         menu: Menu
         subscribe: Subscribe
+        search_placeholder: SEARCH
 
       pagination:
         paginator:
@@ -61,6 +65,13 @@ en:
         read_this_next: Read this next
         share_this: Share this post
         you_might_enjoy: You might enjoy
+
+      search:
+        results:
+          zero: "No Results for “%{query}”"
+          one: "One Result for “%{query}”"
+          other: "%{count} Results for “%{query}”"
+        search_placeholder: Query
 
       tag:
         postcount:

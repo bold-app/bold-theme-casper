@@ -43,6 +43,9 @@ module Bold
             template :category, body: false, fields: %w(cover_image)
             template :author,   body: false
 
+            # search results page
+            template :search,   body: false, fields: %w(cover_image)
+
             # Declare the main stylesheet and Javascript files of the theme.
             #
             # These can also be sprockets manifest files, which in turn
