@@ -8,12 +8,11 @@ original [here](https://github.com/TryGhost/Casper)
 License
 -------
 
-The Bold Casper theme is released under the GPLv3, see LICENSE.
+The Bold Casper theme is released under the AGPLv3, see LICENSE.
 
 
-The Ghost Casper theme on which this work is based, is
-Copyright (c) 2013-2015 Ghost Foundation and was released under the
-MIT LICENSE:
+The Ghost Casper theme on which this work is based, is Copyright (c) 2013-2015
+Ghost Foundation and was originally released under the MIT LICENSE:
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
