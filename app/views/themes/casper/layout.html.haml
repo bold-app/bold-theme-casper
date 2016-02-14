@@ -37,7 +37,10 @@
       %footer.site-footer.clearfix
         %section.copyright
           %a{href: site.url}= site.name
-          &copy; #{d now, '%Y'}
+          - if now.year > site.object.created_at.year
+            &copy; #{d site.object.created_at, '%Y'} - #{d now, '%Y'}
+          - else
+            &copy; #{d now, '%Y'}
         %section.poweredby= raw t '.published_with', link: link_to('Bold', 'https://bold-app.org')
 
     -# by default renders nothing, but plugins might hook in here:

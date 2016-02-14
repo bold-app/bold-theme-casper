@@ -1,0 +1,36 @@
+- has_cover = page[:cover_image].present?
+- if has_cover
+  - content_for :html_head do
+    %meta{name: 'og:image', content: page.image_path(:cover_image, size: :original)}
+
+-# header
+%header.main-header.post-head{style: ("background-image: url('#{page.image_path :cover_image, size: :original}')" if has_cover), class: ('no-cover' unless has_cover)}
+
+  %nav.main-nav.clearfix{class:('overlay' if has_cover)}
+    - if site.logo?
+      %a.blog-logo{href: site.url}
+        = site.logo_tag
+
+    %a.menu-button.icon-menu{href: '#'}
+      %span.word= t 'themes.casper.navigation.menu'
+
+-# the page with contact form
+%main.content{role: "main"}
+  %article.post{class: page.css_class}
+
+    %header.post-header
+      %h1.post-title= page.title
+
+    %section.post-content
+      ~ page.body_html
+
+    %section.contact-form
+      = contact_form do |f|
+        = flash_message
+        = f.input :sender_name, required: false, label: t('.name')
+        = f.input :sender_email, required: false, label: t('.email')
+        = f.input :subject, required: false, label: t('.subject')
+        = f.input :body, required: false, label: t('.body'), input_html: { rows: 8 }
+        .buttons
+          = f.button :submit, t('.submit')
+

@@ -4,6 +4,12 @@ en:
 
       category_prefix: on
 
+      contact:
+        name: Your Name
+        email: Email
+        subject: Subject
+        body: Your message
+
       fields:
         archive:
           yearly: Yearly Archive

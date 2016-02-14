@@ -46,6 +46,9 @@ module Bold
             # search results page
             template :search,   body: false, fields: %w(cover_image)
 
+            # contact page template
+            template :contact,  fields: %w(cover_image contact_message_receiver)
+
             # Declare the main stylesheet and Javascript files of the theme.
             #
             # These can also be sprockets manifest files, which in turn

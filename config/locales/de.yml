@@ -4,6 +4,13 @@ de:
 
       category_prefix: in
 
+      contact:
+        name: Ihr Name
+        email: E-Mail-Adresse
+        subject: Betreff
+        body: Ihre Nachricht
+        submit: Absenden
+
       fields:
         archive:
           yearly: Jährliches Archiv
