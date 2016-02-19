@@ -15,6 +15,10 @@ de:
         archive:
           yearly: Jährliches Archiv
 
+      flash:
+        contact_messages:
+          created: Vielen Dank für Ihre Nachricht.
+
       image_versions:
         big: groß
         small: klein
@@ -48,6 +52,7 @@ de:
           other: "%{count} Artikel"
 
       layout:
+        cover_image_attribution: "Titelbild von %{attribution}"
         published_with: "Veröffentlicht mit %{link}"
 
       navigation:

@@ -41,6 +41,12 @@
             &copy; #{d site.object.created_at, '%Y'} - #{d now, '%Y'}
           - else
             &copy; #{d now, '%Y'}
+
+          - if page[:cover_image].present? and img = site.find_asset(page[:cover_image]) and img.attribution.present?
+            - if img.original_url.present?
+              = link_to t('.cover_image_attribution', attribution: img.attribution), img.original_url
+            - else
+              = t '.cover_image_attribution', attribution: img.attribution
         %section.poweredby= raw t '.published_with', link: link_to('Bold', 'https://bold-app.org')
 
     -# by default renders nothing, but plugins might hook in here:

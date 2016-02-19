@@ -47,7 +47,7 @@ module Bold
             template :search,   body: false, fields: %w(cover_image)
 
             # contact page template
-            template :contact,  fields: %w(cover_image contact_message_receiver)
+            template :contact,  fields: %w(cover_image)
 
             # Declare the main stylesheet and Javascript files of the theme.
             #

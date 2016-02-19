@@ -30,7 +30,7 @@
         = f.input :sender_name, required: false, label: t('.name')
         = f.input :sender_email, required: false, label: t('.email')
         = f.input :subject, required: false, label: t('.subject')
-        = f.input :body, required: false, label: t('.body'), input_html: { rows: 8 }
+        = f.input :body, required: false, label: t('.body'), input_html: { rows: 8 }, as: :text
         .buttons
           = f.button :submit, t('.submit')
 
