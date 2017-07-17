@@ -9,6 +9,7 @@ en:
         email: Email
         subject: Subject
         body: Your message
+        submit: Send
 
       fields:
         archive:
