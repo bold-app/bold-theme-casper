@@ -53,6 +53,7 @@ de:
 
       layout:
         cover_image_attribution: "Titelbild von %{attribution}"
+        imprint: "Impressum"
         published_with: "Veröffentlicht mit %{link}"
 
       navigation:

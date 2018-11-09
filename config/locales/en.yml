@@ -53,6 +53,7 @@ en:
 
       layout:
         cover_image_attribution: "Cover Image by %{attribution}"
+        imprint: "Imprint"
         published_with: "Proudly published with %{link}"
 
       navigation:

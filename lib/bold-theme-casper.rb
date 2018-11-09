@@ -18,6 +18,8 @@ module Bold
             # To add one, create config/locales/xy.yml and add xy here
             locales %i(en de)
 
+            settings partial: 'settings'
+
             # The homepage template. It does not render body text, but has two
             # custom fields named cover_image and description.
             #

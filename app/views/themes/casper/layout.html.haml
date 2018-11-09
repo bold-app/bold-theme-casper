@@ -47,7 +47,11 @@
             &copy; #{d site.object.created_at, '%Y'} - #{d now, '%Y'}
           - else
             &copy; #{d now, '%Y'}
-        %section.poweredby= raw t '.published_with', link: link_to('Bold', 'https://bold-app.org')
+        %section.poweredby
+          - if site.theme_value?("imprint")
+            = link_to t('.imprint'), site.theme_value('imprint')
+          - else
+            = raw t '.published_with', link: link_to('Bold', 'https://bold-app.org')
 
     -# by default renders nothing, but plugins might hook in here:
     = bold_footer
